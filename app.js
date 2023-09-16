@@ -13,8 +13,7 @@ function caesarCipher(s, k){
         if ((66<arr[j] & arr[j]<92) || (96<arr[j] & arr[j]<123)){
 
             var temp = arr[j] + k;
-
-            if(temp> 122){
+            if((temp> 122) || (temp>90 & temp<97)){
                 newMsg =newMsg + String.fromCharCode(temp - 26 );
             }else{
                 newMsg =newMsg + String.fromCharCode(temp);
@@ -32,3 +31,5 @@ console.log(msg1);
 
 var msg2 = caesarCipher("middle-Outz",2);
 console.log(msg2);
+
+console.log(caesarCipher("middle-OutZ",2));
